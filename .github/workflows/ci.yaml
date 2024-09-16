@@ -1,4 +1,4 @@
-name: ci-fullcycle-workflow
+name: ci-fullcycle-desafio-workflow
 on: 
   pull_request:
     branches:
