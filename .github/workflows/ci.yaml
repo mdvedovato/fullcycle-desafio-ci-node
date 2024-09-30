@@ -8,7 +8,16 @@ on:
 jobs:
   sonarcloud:
     name: SonarCloud
-  
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: SonarCloud Analysis
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
   check-application:
     runs-on: ubuntu-latest
     strategy:
@@ -24,12 +33,6 @@ jobs:
 
       - run: npm test
       - run: node ./src/index.js
-
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
       - name: Set up QEMU # responsável por rodar o Docker em diversas arquiteturas
         uses: docker/setup-qemu-action@v2
@@ -48,5 +51,4 @@ jobs:
         with:
           push: true
           tags: mdvedovato/fullcycle-desafio-ci-node:latest  # Substitua pela sua tag correta no DockerHub
-
 
