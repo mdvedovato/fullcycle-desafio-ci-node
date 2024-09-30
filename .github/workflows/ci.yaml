@@ -6,6 +6,7 @@ on:
       - develop
 
 jobs:
+  name: SonarCloud
   check-application:
     runs-on: ubuntu-latest
     strategy:
@@ -46,4 +47,4 @@ jobs:
           push: true
           tags: mdvedovato/fullcycle-desafio-ci-node:latest  # Substitua pela sua tag correta no DockerHub
 
-          
+
