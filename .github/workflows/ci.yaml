@@ -58,4 +58,3 @@ jobs:
           context: .  # Garante que o contexto do build é o diretório raiz do repositório
           push: true
           tags: mdvedovato/fullcycle-desafio-ci-node:latest  # Substitua pela sua tag correta no DockerHub
-
