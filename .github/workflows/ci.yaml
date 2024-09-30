@@ -19,11 +19,9 @@ jobs:
           node-version: ${{ matrix.node }}
       - run: npm install
 
-      # 4. Executa os testes
       - run: npm test
       - run: node ./src/index.js
 
-      # 5. Análise do SonarCloud
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
