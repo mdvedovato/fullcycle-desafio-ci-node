@@ -6,7 +6,9 @@ on:
       - develop
 
 jobs:
-  name: SonarCloud
+  sonarcloud:
+    name: SonarCloud
+  
   check-application:
     runs-on: ubuntu-latest
     strategy:
