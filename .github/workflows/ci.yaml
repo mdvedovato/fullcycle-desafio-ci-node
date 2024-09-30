@@ -59,9 +59,3 @@ jobs:
           push: true
           tags: mdvedovato/fullcycle-desafio-ci-node:latest  # Substitua pela sua tag correta no DockerHub
 
-# Configuração da proteção da branch para exigir a análise do SonarCloud
-  protection:
-    required_status_checks:
-      strict: true
-      contexts:
-        - SonarCloud Scan
