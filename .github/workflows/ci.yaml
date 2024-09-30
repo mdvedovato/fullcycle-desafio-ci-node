@@ -45,4 +45,5 @@ jobs:
         with:
           push: true
           tags: mdvedovato/fullcycle-desafio-ci-node:latest  # Substitua pela sua tag correta no DockerHub
+
           
